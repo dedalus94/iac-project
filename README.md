@@ -76,7 +76,7 @@ This template creates the following resources:
   
 ### Other files:
 
-- run.sh: a bash script to automate the deployment of stacks.
+- run.sh: a bash script to automate the deployment of stacks. <br>
 Arguments:
   
   - EXECUTION_MODE=$1 (only allows 'preview', 'deploy and 'delete)
@@ -98,8 +98,11 @@ Example usage (execution mode = 'delete'):
 
 
 ## Installation 
-1. Copy the repo locally: `git clone https://github.com/dedalus94/iac-project.git`
-2. Install and configure AWS CLI (Command Line Interface)
+1. Copy the repo locally:
+   ```
+     git clone https://github.com/dedalus94/iac-project.git
+   ```
+5. Install and configure AWS CLI (Command Line Interface)
 
 ## Usage Instructions 
 
