@@ -49,15 +49,30 @@ The security group grants unrestricted outbound access to the internet.
  
 *  LaunchTemplate (Type: AWS::EC2::LaunchTemplate): A launch template that contains some configuration information for the instances launched by the autoscaling group. I have used an Ubuntu 22 AMI and the `UserData` property contains bash code that will install NGINX for each instance created.
 The `SecurityGroupIds` property will attach the previously defined security group to each instance. The storage and the instance type configuration are also defined.
-`IamInstanceProfile` assigns an IAM role to the instances that grants EC2 instances with read/write permissions for an S3 bucket.
+`IamInstanceProfile` assigns an Instance Profile role to the instances (see the IAMRole & InstanceProfile resources).
   
 *  AutoScalingGroup (Type: AWS::AutoScaling::AutoScalingGroup):
-  > defines an Amazon EC2 Auto Scaling group, which is a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management. from [AWS Docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html)
+  > defines an Amazon EC2 Auto Scaling group, which is a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management - [AWS Docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html)
+The `MinSize` & `MaxSize` properties set the range of machines that will be running
+The `VPCZoneIdentifier` property is a list of subnet IDs for VPC where instances in the Auto Scaling group can be created. In this case, I am using the private subnets from the network stack.
+the `TargetGroupARNs` property links the Autoscaling Group to the Load Balancer via the Listener & Listener Rule resources
 
+* LoadBalancerSecurityGroup (Type: AWS::EC2::SecurityGroup): A Security group that allows (http) access on port 80 from any IP. The Security group is attached to the Load Balancer resource.
+  
+* LoadBalancer (Type: AWS::ElasticLoadBalancingV2::LoadBalancer): A Load Balancer for incoming traffic deployed on the public subnets.
 
+* Listener & Listener Rule: It will listen to load balancer connections on port 80, and forward them to the target group
+
+* TargetGroup (Type: AWS::ElasticLoadBalancingV2::TargetGroup): The Load Balancer forwards traffic evenly across a group of servers. Since these servers are part of an autoscaling group they may come and go as demands increases or decreases and therefore they cannot be directly referenced, the target group handles this issue for us and also runs health checks to test the status of the targets.
+
+* S3Bucket: This resource deploys a publicly accessible S3 bucket
+* IAMRole: grants EC2 instances with read/write permissions for an S3 bucket
+* InstanceProfile: an instance profile is used to pass an IAM role to an EC2 instance
+
+  
 ### Other files:
 
-- run.sh
+- run.sh: a bash script to automate the deployment and deletion of the stacks
 
 
 ## Installation 
