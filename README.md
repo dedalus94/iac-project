@@ -76,13 +76,32 @@ This template creates the following resources:
   
 ### Other files:
 
-- run.sh: a bash script to automate the deployment and deletion of the stacks
+- run.sh: a bash script to automate the deployment of stacks.
+  Arguments:
+  
+  - EXECUTION_MODE=$1 (only allows 'preview', 'deploy and 'delete)
+  - REGION=$2
+  - STACK_NAME=$3
+  - TEMPLATE_FILE_NAME=$4 (not required in execution mode delete)
+  - PARAMETERS_FILE_NAME=$5 (not required in execution mode delete)
+ 
+  Example usage (execution mode = 'deploy'):
+  - `bash run.sh deploy us-east-1 udagram-server-stack server-infra.yml server-params.json`
+  Example usage (execution mode = 'preview' - change set is not executed):
+  - `bash run.sh preview us-east-1 udagram-server-stack server-infra.yml server-params.json`
+  Example usage (execution mode = 'delete'):
+  - `bash run.sh deploy us-east-1 udagram-server-stack`
+ 
+
 
 
 ## Installation 
+1. Copy the repo locally: `git clone https://github.com/dedalus94/iac-project.git`
+2. Install and configure AWS CLI (Command Line Interface)
 
-The files can be run through a terminal and they require AWS CLI to be installed and configured.
+## Usage Instructions 
 
+Run the run.sh script:  `bash run.sh deploy us-east-1 udagram-server-stack server-infra.yml server-params.json`
 
 ## Infrastructure diagram
 
