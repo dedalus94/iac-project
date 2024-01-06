@@ -118,15 +118,19 @@ Example usage (execution mode = 'delete'):
 
 ## Usage Instructions 
 
-1. Deploy the network infrastructure
+1. Deploy the resources in order. the network infrastructure first
    ```
     `$ bash run.sh deploy us-east-1 network-stack network.yml network-params.json`
    ```
-3. Deploy servers and autoscaling group
+2. And the servers next
    ```
     `$ bash run.sh deploy us-east-1 udagram-server-stack udagram.yml udagram-params.json`
    ```
-   
+If the creation is completed without errors the result should be visible in the AWS console - CloudFormation > Stacks: 
+
+![image](https://github.com/dedalus94/iac-project/assets/49538048/6b9b9b4b-01eb-4c8d-b35f-d93973ba1b04)
+
+
 ## Infrastructure diagram
 <br>
 
