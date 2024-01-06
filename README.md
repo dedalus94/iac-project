@@ -6,13 +6,13 @@
 
 1. [Intro](#intro)
 2. [File Structure](#file-structure)
+3. [File Details](#file-details)
    1. [network.yml](#networkyml)
-      - [File Details](#file-details)
    2. [udagram.yml](#udagramyml)
    3. [Other Files](#other-files)
-3. [Installation](#installation)
-4. [Usage Instructions](#usage-instructions)
-5. [Infrastructure Diagram](#infrastructure-diagram)
+4. [Installation](#installation)
+5. [Usage Instructions](#usage-instructions)
+6. [Infrastructure Diagram](#infrastructure-diagram)
 
 ## Intro
 
