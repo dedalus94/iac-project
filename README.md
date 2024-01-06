@@ -77,7 +77,7 @@ This template creates the following resources:
 ### Other files:
 
 - run.sh: a bash script to automate the deployment of stacks.
-  Arguments:
+Arguments:
   
   - EXECUTION_MODE=$1 (only allows 'preview', 'deploy and 'delete)
   - REGION=$2 (AWS region)
@@ -85,11 +85,13 @@ This template creates the following resources:
   - TEMPLATE_FILE_NAME=$4 (yaml file with resource definitions - not required in execution mode delete)
   - PARAMETERS_FILE_NAME=$5 (json file with parameters used by resources - not required in execution mode delete)
  
-  Example usage (execution mode = 'deploy'):
+Example usage (execution mode = 'deploy'):
   - `$ bash run.sh **deploy** us-east-1 udagram-server-stack server-infra.yml server-params.json` <br>
-  Example usage (execution mode = 'preview' - change set is not executed):
+  
+Example usage (execution mode = 'preview' - change set is not executed):
   - `$ bash run.sh **preview** us-east-1 udagram-server-stack server-infra.yml server-params.json` <br>
-  Example usage (execution mode = 'delete'):
+  
+Example usage (execution mode = 'delete'):
   - `$ bash run.sh **delete** us-east-1 udagram-server-stack`
  
 
