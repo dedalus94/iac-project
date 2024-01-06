@@ -53,11 +53,11 @@ This template creates the following resources:
   * The `SecurityGroupIds` property will attach the previously defined security group to each instance. The storage and the instance type configuration are also defined.
   * `IamInstanceProfile` assigns an Instance Profile role to the instances (see the IAMRole & InstanceProfile resources).
 
-* dyfdyfg
-  * dfudufh
-  * dfsf
-  * sfsfs
-  * sfs
+* AutoScalingGroup (Type: AWS::AutoScaling::AutoScalingGroup):
+  * > defines an Amazon EC2 Auto Scaling group, which is a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management - [AWS Docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html)
+  * The `MinSize` & `MaxSize` properties set the range of machines that will be running
+  * The `VPCZoneIdentifier` property is a list of subnet IDs for VPC where instances in the Auto Scaling group can be created. In this case, I am using the private subnets from the network stack.
+  * The `TargetGroupARNs` property links the Autoscaling Group to the Load Balancer via the Listener & Listener Rule resources (see the TargetGroup resource)
 
     
 *  AutoScalingGroup (Type: AWS::AutoScaling::AutoScalingGroup):
