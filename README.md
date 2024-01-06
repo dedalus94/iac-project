@@ -1,4 +1,4 @@
-![Untitled Diagram drawio](https://github.com/dedalus94/iac-project/assets/49538048/5c4296f5-cc5a-458b-94d8-0225d319e7fe)# Udacity Cloud DevOps Engineer Nanodegree
+# Udacity Cloud DevOps Engineer Nanodegree
 ### Section 'Deploy Infrastructure as Code (IAC)'
 #### Project 'Deploy a high-availability web app using CloudFormation'
 
