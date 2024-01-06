@@ -60,11 +60,11 @@ This template creates the following resources:
   * The `TargetGroupARNs` property links the Autoscaling Group to the Load Balancer via the Listener & Listener Rule resources (see the TargetGroup resource)
     
 * LoadBalancerSecurityGroup (Type: AWS::EC2::SecurityGroup): A Security group that allows (http) access on port 80 from any IP. The Security group is attached to the Load Balancer resource.
-* 
+  
 * LoadBalancer (Type: AWS::ElasticLoadBalancingV2::LoadBalancer): A Load Balancer deployed on the public subnets to forward traffic evenly across servers.
-* 
+  
 * Listener & Listener Rule: It will listen to load balancer connections on port 80, and forward them to the target group (see the TargetGroup resource)
-* 
+  
 * TargetGroup (Type: AWS::ElasticLoadBalancingV2::TargetGroup): The Load Balancer forwards traffic evenly across a group of servers, but since these servers are part of an autoscaling group they may come and go as demand increases or decreases and therefore they cannot be directly referenced. the target group handles this issue for us and also runs health checks to test the status of the targets.
   
 * S3Bucket: This resource deploys a publicly accessible S3 bucket
