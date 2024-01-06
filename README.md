@@ -16,7 +16,7 @@
 
 ## Intro
 
-This project simulates the creation of a network and other AWS resources through cloud formation templates. it simulates a realistic scenario where a dummy application (a sample JavaScript or HTML file) is deployed to an NGINX server running on an EC2 instance.
+This project simulates the creation of a network and other AWS resources through cloud formation templates. it simulates a realistic scenario where a dummy application is deployed to an NGINX server running on an EC2 instance.
 
 ## File structure 
 
