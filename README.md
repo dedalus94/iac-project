@@ -52,7 +52,7 @@ The `SecurityGroupIds` property will attach the previously defined security grou
 `IamInstanceProfile` assigns an IAM role to the instances that grants EC2 instances with read/write permissions for an S3 bucket.
   
 *  AutoScalingGroup (Type: AWS::AutoScaling::AutoScalingGroup):
-  > defines an Amazon EC2 Auto Scaling group, which is a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management.
+  > defines an Amazon EC2 Auto Scaling group, which is a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management. from [AWS Docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html)
 
 
 ### Other files:
