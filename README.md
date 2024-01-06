@@ -52,6 +52,13 @@ This template creates the following resources:
   * A launch template that contains some configuration information for the instances launched by the autoscaling group. I have used an Ubuntu 22 AMI and the `UserData` property contains bash code that will install NGINX for each instance created.
   * The `SecurityGroupIds` property will attach the previously defined security group to each instance. The storage and the instance type configuration are also defined.
   * `IamInstanceProfile` assigns an Instance Profile role to the instances (see the IAMRole & InstanceProfile resources).
+
+* dyfdyfg
+  * dfudufh
+  * dfsf
+  * sfsfs
+  * sfs
+
     
 *  AutoScalingGroup (Type: AWS::AutoScaling::AutoScalingGroup):
   * > defines an Amazon EC2 Auto Scaling group, which is a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management - [AWS Docs](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html)
