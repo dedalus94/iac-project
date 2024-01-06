@@ -107,9 +107,13 @@ Example usage (execution mode = 'delete'):
 ## Usage Instructions 
 
 1. Deploy the network infrastructure
-   - `$ bash run.sh deploy us-east-1 network-stack network.yml network-params.json`
+   ```
+    `$ bash run.sh deploy us-east-1 network-stack network.yml network-params.json`
+   ```
 3. Deploy servers and autoscaling group
-   - `$ bash run.sh deploy us-east-1 udagram-server-stack udagram.yml udagram-params.json`
+   ```
+    `$ bash run.sh deploy us-east-1 udagram-server-stack udagram.yml udagram-params.json`
+   ```
    
 ## Infrastructure diagram
 
