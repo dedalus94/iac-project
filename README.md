@@ -80,17 +80,17 @@ This template creates the following resources:
   Arguments:
   
   - EXECUTION_MODE=$1 (only allows 'preview', 'deploy and 'delete)
-  - REGION=$2
-  - STACK_NAME=$3
-  - TEMPLATE_FILE_NAME=$4 (not required in execution mode delete)
-  - PARAMETERS_FILE_NAME=$5 (not required in execution mode delete)
+  - REGION=$2 (AWS region)
+  - STACK_NAME=$3 (desired name for the cloud formation stack)
+  - TEMPLATE_FILE_NAME=$4 (yaml file with resource definitions - not required in execution mode delete)
+  - PARAMETERS_FILE_NAME=$5 (json file with parameters used by resources - not required in execution mode delete)
  
   Example usage (execution mode = 'deploy'):
-  - `bash run.sh deploy us-east-1 udagram-server-stack server-infra.yml server-params.json`
+  - `$ bash run.sh **deploy** us-east-1 udagram-server-stack server-infra.yml server-params.json`
   Example usage (execution mode = 'preview' - change set is not executed):
-  - `bash run.sh preview us-east-1 udagram-server-stack server-infra.yml server-params.json`
+  - `$ bash run.sh **preview** us-east-1 udagram-server-stack server-infra.yml server-params.json`
   Example usage (execution mode = 'delete'):
-  - `bash run.sh deploy us-east-1 udagram-server-stack`
+  - `$ bash run.sh **delete** us-east-1 udagram-server-stack`
  
 
 
@@ -101,8 +101,11 @@ This template creates the following resources:
 
 ## Usage Instructions 
 
-Run the run.sh script:  `bash run.sh deploy us-east-1 udagram-server-stack server-infra.yml server-params.json`
-
+1. Deploy the network infrastructure
+   - `$ bash run.sh deploy us-east-1 network-stack network.yml network-params.json`
+3. Deploy servers and autoscaling group
+   - `$ bash run.sh deploy us-east-1 udagram-server-stack udagram.yml udagram-params.json`
+   
 ## Infrastructure diagram
 
 ![image](https://github.com/dedalus94/cloud-formation-IAC-scripts/assets/49538048/f00ec782-c634-4b69-8330-cb466971ce07)
