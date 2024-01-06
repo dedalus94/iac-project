@@ -2,9 +2,21 @@
 ### Section 'Deploy Infrastructure as Code (IAC)'
 #### Project 'Deploy a high-availability web app using CloudFormation'
 
+## Table of Contents
+
+1. [Intro](#intro)
+2. [File Structure](#file-structure)
+   1. [network.yml](#networkyml)
+      - [File Details](#file-details)
+   2. [udagram.yml](#udagramyml)
+   3. [Other Files](#other-files)
+3. [Installation](#installation)
+4. [Usage Instructions](#usage-instructions)
+5. [Infrastructure Diagram](#infrastructure-diagram)
+
 ## Intro
 
-This project simulates the creation of a network and other AWS resources through cloud formation templates.
+This project simulates the creation of a network and other AWS resources through cloud formation templates. it simulates a realistic scenario where a dummy application (a sample JavaScript or HTML file) is deployed to an NGINX server running on an EC2 instance.
 
 ## File structure 
 
@@ -116,6 +128,8 @@ Example usage (execution mode = 'delete'):
    ```
    
 ## Infrastructure diagram
- <br>
-![Untitled Diagram](https://github.com/dedalus94/iac-project/assets/49538048/1fbca652-dbcf-40a5-a1eb-d9abcd551aa8)
+<br>
+
+![Untitled Diagram](https://github.com/dedalus94/iac-project/assets/49538048/c47f7dd7-200d-4e11-8399-3ea31adb6f95)
+
 
