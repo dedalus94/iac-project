@@ -10,7 +10,7 @@ This project simulates the creation of a network and other AWS resources through
 
 * network.yml : a cloud formation template file to create the network infrastructure
 * network-params.json : a cloud formation parameters json file used to create the netwrok resources
-* udagram.yml : a coud formation template file to add EC2 instances, a secrity group with ingrass and egress rules, an autoscaling group, a load balancer, a public S3 buckets and other resources
+* udagram.yml : a coud formation template file to add EC2 instances, a secrity group with inbound and outbound rules, an autoscaling group, a load balancer, a public S3 buckets and other resources
 * udagram-params.json : a cloud formation parameters json file used to create the resources in udagram.yml
 * run.sh : a bash script to execute the deployment of the resources (see usage instructions)
 
