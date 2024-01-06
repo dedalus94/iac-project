@@ -15,16 +15,16 @@ This project simulates the creation of a network and other AWS resources through
 * run.sh : a bash script to execute the deployment of the resources (see usage instructions)
 
 ## File details
-### network.yml
-The network.yml template creates the following resources: 
+### network.yml 
 
-The templates use several intrinsic functions:
+The templates uses several intrinsic functions:
 * **!Ref** : references a different resource in the same template or one of the parameters that are then taken from the paramater JSON file
 * **!Sub** : substitutes a placeholder in a string with a parameter, for example ``${ProjectName}-public-subnet1`` will become ``udacity-vpc-subents-exercise-public-subnet1`` because the ProjectName is a parameter with value ``udacity-vpc-subents-exercise``
 * **!GetAtt** : gets an attribute from another resource, for example a static ip address from an Elastic IP address resource, ``!GetAtt NatGateway1EIP.AllocationId``
 * **!Select** : gets an item from a list generated with another intrinsic function, for example ``!Select [1, !GetAZs '']`` to select availability zone 1 from the availability zone available for the default region (region can be specified in the empty string).
 * **!Join** : concatenates values with a specific delimiter, for example, to create a list with the IDs of all subnets ``!Join [ ",", [ !Ref PrivateSubnet1, !Ref PrivateSubnet2 ]]``
 
+This template creates the following resources:
 
 * VPC
 * Internet Gateway attached with the VPC
@@ -34,7 +34,7 @@ The templates use several intrinsic functions:
 * Elastic IP for the NAT gateways, this is required so that the IP does not change and any resources or services that depend on the NAT gateway's IP address won't be affected by changes.
 * Route tables
 
-The template also has a Parameters section to reference parameters in a JSON file and an Output section to save information about the resources created:
+The template also has a 'Parameters' section to reference parameters in a JSON file and an 'Output' section to save information about the resources created:
 
 ![image](https://github.com/dedalus94/cloud-formation-IAC-scripts/assets/49538048/059b35df-b697-4460-b53b-79beadafd855)
 
