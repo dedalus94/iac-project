@@ -48,6 +48,8 @@ This template creates the following resources:
   * The security group grants inbound access by the Load Balancer Security Group on port 80.
   * The security group grants unrestricted outbound access to the internet.
   ![image](https://github.com/dedalus94/iac-project/assets/49538048/59e6bcb1-03e5-4ce6-9c20-3f59c0bc82ec)
+
+
  
 *  LaunchTemplate (Type: AWS::EC2::LaunchTemplate):
   * A launch template that contains some configuration information for the instances launched by the autoscaling group. I have used an Ubuntu 22 AMI and the `UserData` property contains bash code that will install NGINX for each instance created.
