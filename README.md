@@ -51,7 +51,8 @@ The security group grants unrestricted outbound access to the internet.
 The `SecurityGroupIds` property will attach the previously defined security group to each instance. The storage and the instance type configuration are also defined.
 `IamInstanceProfile` assigns an IAM role to the instances that grants EC2 instances with read/write permissions for an S3 bucket.
   
-*  AutoScalingGroup (Type: AWS::AutoScaling::AutoScalingGroup): > defines an Amazon EC2 Auto Scaling group, which is a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management.
+*  AutoScalingGroup (Type: AWS::AutoScaling::AutoScalingGroup):
+  > defines an Amazon EC2 Auto Scaling group, which is a collection of Amazon EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management.
 
 
 ### Other files:
