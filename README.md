@@ -98,13 +98,13 @@ Arguments:
   - PARAMETERS_FILE_NAME=$5 (json file with parameters used by resources - not required in execution mode delete)
  
 Example usage (execution mode = 'deploy'):
-  - `$ bash run.sh deploy us-east-1 udagram-server-stack server-infra.yml server-params.json` <br>
+  `$ bash run.sh deploy us-east-1 udagram-server-stack server-infra.yml server-params.json` <br>
   
 Example usage (execution mode = 'preview' - change set is not executed):
-  - `$ bash run.sh preview us-east-1 udagram-server-stack server-infra.yml server-params.json` <br>
+  `$ bash run.sh preview us-east-1 udagram-server-stack server-infra.yml server-params.json` <br>
   
 Example usage (execution mode = 'delete'):
-  - `$ bash run.sh delete us-east-1 udagram-server-stack`
+  `$ bash run.sh delete us-east-1 udagram-server-stack`
  
 
 
