@@ -16,7 +16,7 @@
 
 ## Intro
 
-This project simulates the creation of a network and other AWS resources through cloud formation templates. it simulates a realistic scenario where a dummy application is deployed to an NGINX server running on an EC2 instance.
+This project simulates the creation of a network and other AWS resources through cloud formation templates. it simulates a realistic scenario where a dummy application is deployed to an apache2 server running on an EC2 instance.
 
 ## File structure 
 
@@ -61,7 +61,7 @@ This template creates the following resources:
   * The security group grants unrestricted outbound access to the internet. <br> ![image](https://github.com/dedalus94/iac-project/assets/49538048/59e6bcb1-03e5-4ce6-9c20-3f59c0bc82ec)
 
 * LaunchTemplate (Type: AWS::EC2::LaunchTemplate):
-  * A launch template that contains some configuration information for the instances launched by the autoscaling group. I have used an Ubuntu 22 AMI and the `UserData` property contains bash code that will install NGINX for each instance created.
+  * A launch template that contains some configuration information for the instances launched by the autoscaling group. I have used an Ubuntu 22 AMI and the `UserData` property contains bash code that will install and start apache2 for each instance created.
   * The `SecurityGroupIds` property will attach the previously defined security group to each instance. The storage and the instance type configuration are also defined.
   * `IamInstanceProfile` assigns an Instance Profile role to the instances (see the IAMRole & InstanceProfile resources).
 
@@ -137,9 +137,10 @@ The Load Balancer DNS is saved as an Output for the second stack:
 <br>
 ![image](https://github.com/dedalus94/iac-project/assets/49538048/c53d62e4-0e68-4294-8b4e-e816799cc91f)
 
-And if the servers are running the NGIX welcome page should be displayed at that link:
+And if the servers are running fine, the welcome page should be displayed at that link:
 <br>
-![image](https://github.com/dedalus94/iac-project/assets/49538048/2d17c5c0-9881-43b6-ac64-e183e08eeac4)
+![image](https://github.com/dedalus94/iac-project/assets/49538048/bdcd8ef1-3cb1-4406-ad3e-765a0647b11e)
+
 
 
 ## Infrastructure diagram
