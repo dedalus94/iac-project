@@ -26,7 +26,7 @@ Resources:
         ToPort: 80
         SourceSecurityGroupId: !Ref LoadBalancerSecurityGroup
 
-      # Unrestricted outbound access to the intern to be able to download updates
+      # Unrestricted outbound access to the internt to be able to download updates
       SecurityGroupEgress:
       - IpProtocol: tcp
         FromPort: 0
@@ -43,6 +43,8 @@ Resources:
             apt-get update -y
             sudo apt-get install nginx -y
             service nginx start
+            cd /var/www/html
+            echo "Udacity Demo Web Server Up and Running!" > index.html
         ImageId: ami-0557a15b87f6559cf
         SecurityGroupIds:
           - !Ref SecurityGroup
@@ -189,3 +191,8 @@ Outputs:
     Value: !Join [ "", [ http:// , !GetAtt LoadBalancer.DNSName ]]
     Export:
       Name: !Sub ${ProjectName}-load-balancer-dns
+
+
+
+
+
