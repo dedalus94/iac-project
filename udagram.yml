@@ -41,8 +41,8 @@ Resources:
           Fn::Base64: |
             #!/bin/bash
             apt-get update -y
-            sudo apt-get install nginx -y
-            service nginx start
+            apt-get install apache2 -y
+            systemct1 start apache2.service
             cd /var/www/html
             echo "Udacity Demo Web Server Up and Running!" > index.html
         ImageId: ami-0557a15b87f6559cf
@@ -132,7 +132,7 @@ Resources:
   S3Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: "iac-project-s3-bucket"
+      BucketName: "iac-project-s3-bucket-new"
       AccessControl: Private
       VersioningConfiguration:
         Status: Enabled
