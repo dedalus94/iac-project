@@ -18,6 +18,8 @@
 
 This project simulates the creation of a network and other AWS resources through cloud formation templates. it simulates a realistic scenario where a dummy application is deployed to an apache2 server running on an EC2 instance.
 
+URL to the dummy application: http://udagra-loadb-mwmqa2qjxr2c-1210332304.us-east-1.elb.amazonaws.com/
+
 ## File structure 
 
 * network.yml : a cloud formation template file to create the network infrastructure
