@@ -99,16 +99,16 @@ Arguments:
  
 Example usage (execution mode = 'deploy'):
 ```
-bash run.sh deploy us-east-1 udagram-server-stack server-infra.yml server-params.json 
+bash run.sh deploy us-east-1 udagram-server-stack udagram.yml udagram-params.json 
 ``` 
 Example usage (execution mode = 'preview' - change set is not executed):
 ```
-  $ bash run.sh preview us-east-1 udagram-server-stack server-infra.yml server-params.json 
+bash run.sh preview us-east-1 udagram-server-stack udagram.yml udagram-params.json 
 ```
 Example usage (execution mode = 'delete'):
 ```
-  $ bash run.sh delete us-east-1 udagram-server-stack
- ```
+bash run.sh delete us-east-1 udagram-server-stack
+```
 
 
 
@@ -123,11 +123,11 @@ Example usage (execution mode = 'delete'):
 
 1. Deploy the resources in order. the network infrastructure first
    ```
-    `$ bash run.sh deploy us-east-1 network-stack network.yml network-params.json`
+   bash run.sh deploy us-east-1 network-stack network.yml network-params.json
    ```
 2. And the servers next
    ```
-    `$ bash run.sh deploy us-east-1 udagram-server-stack udagram.yml udagram-params.json`
+   bash run.sh deploy us-east-1 udagram-server-stack udagram.yml udagram-params.json
    ```
 If the creation is completed without errors the result should be visible in the AWS console - CloudFormation > Stacks: 
 <br>
